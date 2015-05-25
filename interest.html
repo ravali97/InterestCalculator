@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+
+	 
+	 
+</head>
+<body>
+<table border="1" "width:100%" class='table-bordered'>
+  <form id="myForm">
+  <caption>Monthly payment</caption>
+  <tr>
+    <th>Description</th>
+    <th>Data entry</th>
+  </tr>
+  <tr>
+    <td>Loan Amount</td>
+    <td><input type="text" name="Loan Amount" id="Loan Amount" autocomplete="off"> </td>
+    
+  </tr>
+  <tr>
+    <td>Loan length in months</td>
+    <td><input type="text" name="Loan length in months" id="Loan length in months" autocomplete="off">  </td>
+    
+  </tr>
+  <tr>
+    <td>Interest rate</td>
+    <td><input type="text" name="Interest rate" id="Interest rate" autocomplete="off">  </td>
+    
+  </tr>
+  <tr>
+    <td>Monthly payment</td>
+    <td>Calculated<input type="text" name="Monthly payment" id="Monthly payment">  </td>
+    
+  </tr>
+  <tr>
+    <td><input type='button' value="Calculate" onclick="calculate()"></td>
+    <td> <input type='button' value="Reset" onclick="Reset()"> </td>
+    
+  </tr>
+  
+  <script>
+    
+    
+     function calculate()
+     {
+       var amt = parseInt(document.getElementById("Loan Amount").value);
+       var months=parseInt(document.getElementById("Loan length in months").value);
+       var rate=parseInt(document.getElementById("Interest rate").value);
+       var calculation=(amt*months*rate)/100;
+        var month=(amt+calculation)/months;
+       var result=document.getElementById("Monthly payment");
+       result.value=month;
+     }
+    
+    function Reset()
+    {
+      document.getElementById("myForm").reset();
+    }
+    
+  </script>
+    </form>
+  </table>
+  </body>
+</html>
+  
+</body>
+</html>
